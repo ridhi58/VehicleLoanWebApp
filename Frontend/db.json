@@ -1,0 +1,96 @@
+{
+  "users": [
+    {
+      "name": "Ridhi",
+      "email": "ridhiagarwal58@gmail.com",
+      "gender": "Female",
+      "mobile": "7877797889",
+      "age": 12,
+      "password": "12",
+      "id": 1
+    },
+    {
+      "name": "Indranil",
+      "email": "sdhagarwal2@gmail.com",
+      "gender": "male",
+      "mobile": "8989863924",
+      "age": 1,
+      "password": "2",
+      "id": 2
+    }
+  ],
+  "url": [
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    }
+  ],
+  "loanApplication": [
+    {
+      "chassisNo": "",
+      "existingEMI": "",
+      "tenure": "",
+      "interest": "",
+      "amount": 2,
+      "brand": "",
+      "colour": "",
+      "model": "",
+      "type": "",
+      "exShowPrice": "",
+      "onRoadPrice": "2",
+      "id": 2
+    },
+    {
+      "chassisNo": "",
+      "existingEMI": "2",
+      "tenure": "",
+      "interest": 4,
+      "amount": 2,
+      "brand": "",
+      "colour": "ee",
+      "model": "",
+      "type": "",
+      "exShowPrice": "",
+      "onRoadPrice": "",
+      "userApply": {
+        "address": "",
+        "state": "",
+        "city": "",
+        "emptype": "",
+        "salary": "",
+        "aadhar": "",
+        "pan": "",
+        "salarySlip": "",
+        "addressProof": ""
+      },
+      "id": 4
+    },
+    {
+      "chassisNo": "34",
+      "existingEMI": "3",
+      "tenure": 3,
+      "interest": 3,
+      "amount": 4,
+      "brand": "",
+      "colour": "red",
+      "model": "",
+      "type": "",
+      "exShowPrice": "",
+      "onRoadPrice": "",
+      "userApply": {
+        "address": "Hostel no 7 manit bhopal",
+        "state": "Rajasthan",
+        "city": "Ajmer",
+        "emptype": "Salaried",
+        "salary": "45",
+        "aadhar": "",
+        "pan": "C:\\fakepath\\.gitignore",
+        "salarySlip": "",
+        "addressProof": ""
+      },
+      "id": 5
+    }
+  ]
+}

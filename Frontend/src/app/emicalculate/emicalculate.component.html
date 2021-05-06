@@ -1,0 +1,76 @@
+<div class = "emi">
+    <div class = "emiMain">
+        <div class = "image">
+            
+        <img src ="../../assets/video_Moment.jpg" width ="100%" height = "450px"/>
+
+        </div>
+        <div class = "div2">
+            <p>Vehicle Loan EMI calculator</p>
+            <p>Wheels4Hope vehicle loan calculator helps you calculate your Home Loan Emi with ease. 
+                HDFC offers home loans with EMIs starting from ₹1lac and interest rates starting from 6.90%*
+                with additional features such as flexible repayment options and top-up loan.
+                 With a low-interest rate and long repayment tenure, Wheel4Hope ensures a comfortable vehicle loan EMI for you. 
+                 With our reasonable EMI loan is lighter on your pocket. Calculate the EMI that you will be required to pay for
+                  your vehicle loan with our easy to understand loan</p>
+        </div>
+
+        <div class = "div3">
+
+            <div class = "div3_1">
+            <div class = "div3_1_1">
+                <label style = "font-weight:500 ">Loan Amount: </label>
+                <button>₹</button><input value = {{amount}}> <br>
+                <label>1L</label>
+                <input class = "slider" type="range" min="100000" max="4000000" value="300000" (input)="valueChanged1($event.target.value)">
+                <label>40L</label><br>
+            </div>
+            <div  class = "div3_1_1">
+                <label  style = "font-weight:500 ">Tenure: </label>
+                <input value = {{tenure}}><button>Years</button> <br>
+                <label>1</label>
+                <input class = "slider" type="range" min="1" max="10" value="2" (input)="valueChanged2($event.target.value)">
+                <label>10</label><br>
+            </div>
+            <div  class = "div3_1_1">
+                <label   style = "font-weight:500 ">Interest: </label>
+                <input value ={{interest}} ><button>%</button><br>
+                <label>10</label>
+                <input class = "slider" type="range" min="10" max="20" value="11" (input)="valueChanged3($event.target.value)">
+                <label>20</label><br>
+
+            </div>
+            <button class = "calc" (click) = "calculate()">Calculate</button>
+            </div>
+            <div class = "div3_2">
+                <div class = "div3_2_1">
+                    <p>EMI Result</p>
+                </div>
+                <div class = "div3_2_2">
+                <p  > Equated Monthly Installment (EMI)  </p>
+                <p style = "font-size :1.5rem">{{emi}}</p>
+                <p  > Total Interest Payable </p>
+                <p style = "font-size :1.5rem">{{totalinterest}}</p>
+                <p  > Total Payment (Principal+Interest) </p>
+                <p style = "margin-bottom: 2rem;font-size :1.5rem;"> {{total}}</p>
+                <a class = "calcApply" href = {{link}}>Apply for Loan</a>
+            </div>
+             </div> 
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

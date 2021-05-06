@@ -1,0 +1,55 @@
+.doc{
+    width:80%;
+    margin:auto;
+    margin-top:80px;
+
+}
+
+
+table  {
+    
+    border-collapse: collapse;
+    font-size: 1.2rem;
+    width:100%;
+    
+
+}
+td{
+    border:1px solid lightgray;
+    padding:1rem;
+
+}
+
+thead{
+    background-color: #005984;
+    color:white;
+}
+
+.div1 , .div2{
+    margin-bottom: 2rem;
+}
+li{
+    list-style: none;
+}
+
+i{
+    margin-right:0.8rem;
+    color:rgb(37, 37, 102);
+    font-size: 1.2rem;
+}
+
+p{
+    font-size:1.5rem;
+    color:#34495e;
+    font-weight: 700;
+}
+
+@media(max-width:800px)
+{
+.doc{
+    width:95%;
+}
+td{
+    padding:0.2rem;
+}
+}

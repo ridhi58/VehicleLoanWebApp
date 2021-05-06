@@ -1,0 +1,295 @@
+<div class = "apply">
+
+    <div class = "container">
+
+ 
+        <div class = "form-right">          
+         <span class = "notchecked" [ngClass] = "{'checked':check1}">1</span>
+         <div class = "div1" [ngClass] = "{'divChecked':check1}" > <i id = "arrow" class="fa fa-check" aria-hidden="true" style = "visibility: {{show1}};"></i></div>
+
+         <span class = "notchecked" [ngClass] = "{'checked':check2}">2</span>
+         <div class="div1" [ngClass] = "{'divChecked':check2}"><i id = "arrow" class="fa fa-check" aria-hidden="true" style = "visibility: {{show2}};"></i></div>
+         <span class = "notchecked" [ngClass] = "{'checked':check3}">3</span>
+         <div class="div1" [ngClass] = "{'divChecked':check3}"><i id = "arrow" class="fa fa-check" aria-hidden="true" style = "visibility: {{show3}};"></i></div>
+         <span class = "notchecked" [ngClass] = "{'checked':check4}">4</span>
+         <div></div>
+        
+        </div>
+  
+        <div class = "form-left">
+            <h1>Apply for Loan<i id = "icon1" class="fa fa-location-arrow" aria-hidden="true"></i></h1>
+           
+            <form [formGroup] = "applyForm" *ngIf = "step1" (submit) = "onStep1()">
+                <input type = "text" placeholder = "Enter your first name" formControlName = "first" ><br/>
+                <input type = "email" placeholder="Enter your email-id" formControlName = "email" ><br/>
+                <input type = "text" placeholder="Enter your mobile number" formControlName = "mobile"  ><br/>
+  
+                <p class = "validate" *ngIf = "applyForm.controls.address.errors && (applyForm.controls.address.touched ||applyForm.controls.address.dirty)">*Address required</p>   
+                <input type = "text" placeholder="Enter your Address" formControlName = "address"><br/>
+               
+                <p class = "validate" *ngIf = "applyForm.controls.city.errors && (applyForm.controls.city.touched ||applyForm.controls.city.dirty)">*Cityrequired</p>   
+                <select style = "margin-right:4rem;" formControlName = "city">
+                    <option value ="">City</option>
+                    <option>Adoni</option>
+                    <option>Amaravati</option>
+                    <option>Agra</option>
+                    <option>Ahemdabad</option>
+                    <option>Aizawl</option>
+                    <option>Ajitgarh</option>
+                    <option>Ajmer</option>
+                    <option>Akola</option>
+                    <option>Alappuzha</option>
+                    <option>Aligarh</option>
+                    <option>Allahabad</option>
+                    <option>Almora</option>
+                    <option>Amritsar</option>
+                    <option>Badgam</option>
+                    <option>Ballia</option>
+                    <option>Bangalore</option>
+                    <option>Burdwan</option>
+                    <option>Bhopal</option>
+                    <option>Chandigarh</option>
+                    <option>Chennai</option>
+                    <option>Dadra and Nagar Haveli</option>
+                    <option>Darjeeling</option>
+                    <option>Dehradun</option>
+                    <option>Deoghar</option>
+                    <option>Dhanbad</option>
+                    <option>Durgapur</option>
+                    <option>Delhi</option>
+                    <option>Eluru</option>
+                    <option>Erode</option>
+                    <option>Faizabad</option>
+                    <option>Faridabad</option>
+                    <option>Gandhinagar</option>
+                    <option>Gaya</option>
+                    <option>Ghaziabad</option>
+                    <option>Goa</option>
+                    <option>Gwalior</option>
+                    <option>Hamirpur</option>
+                    <option>Haridwar</option>
+                    <option>Hassan</option>
+                    <option>Hooghly</option>
+                    <option>Howrah</option>
+                    <option>Imphal</option>
+                    <option>Indore</option>
+                    <option>Jabalpur</option>
+                    <option>Jaipur</option>
+                    <option>Jaisalmer</option>
+                    <option>Jammu</option>
+                    <option>Jamtara</option>
+                    <option>Jalpaiguri</option>
+                    <option>Jodhpur</option>
+                    <option>Jhansi</option>
+                    <option>Kamrup</option>
+                    <option>Kalahandi</option>
+                    <option>Kolkata</option>
+                    <option>Kangra</option>
+                    <option>Kota</option>
+                    <option>Kozhikode</option>
+                    <option>Lucknow</option>
+                    <option>Ludhiana</option>
+                    <option>Madurai</option>
+                    <option>Mumbai</option>
+                    <option>Mandi</option>
+                    <option>Mirzapur</option>
+                    <option>Mysore</option>
+                    <option>New Delhi</option>
+                    <option>Patna</option>
+                    <option>Pune</option>
+                    <option>Raipur</option>
+                    <option>Rajkot</option>
+                    <option>Ranchi</option>
+                    <option>Shimla</option>
+                    <option>Srinagar</option>
+                    <option>Surat</option>
+                    <option>Thiruvanthapuram</option>
+                    <option>Udaipur</option>
+                    <option>Vellore</option>
+                </select>
+                <p class = "validate" *ngIf = "applyForm.controls.state.errors && (applyForm.controls.state.touched ||applyForm.controls.state.dirty)">*State required</p>
+                <select formControlName="state">
+                    <option value ="">State</option>
+                    <option value ="">State</option>
+                    <option value="">State</option>
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                    <option value="Assam">Assam</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Chandigarh">Chandigarh</option>
+                    <option value="Chhattisgarh">Chhattisgarh</option>
+                    <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                    <option value="Daman and Diu">Daman and Diu</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Lakshadweep">Lakshadweep</option>
+                    <option value="Puducherry">Puducherry</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                    <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                    <option value="Jharkhand">Jharkhand</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Manipur">Manipur</option>
+                    <option value="Meghalaya">Meghalaya</option>
+                    <option value="Mizoram">Mizoram</option>
+                    <option value="Nagaland">Nagaland</option>
+                    <option value="Odisha">Odisha</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Sikkim">Sikkim</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Tripura">Tripura</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="Uttarakhand">Uttarakhand</option>
+                    <option value="West Bengal">West Bengal</option>
+                </select><br/>
+                
+                <p class = "validate" *ngIf = "applyForm.controls.pin.errors && (applyForm.controls.pin.touched ||applyForm.controls.pin.dirty)">*Pin required</p>
+                <input type = "text" placeholder="Pin Code" formControlName="pin"><br/>
+                
+                <p class = "validate" *ngIf = "applyForm.controls.annual.errors && (applyForm.controls.annual.touched ||applyForm.controls.annual.dirty)">*Annual Salary required</p>
+                <input type = "text" placeholder="Annual Salary" formControlName="annual"><br/>
+                
+                <p class = "validate" *ngIf = "applyForm.controls.empType.errors && (applyForm.controls.empType.touched ||applyForm.controls.empType.dirty)">*Employment Type required</p>
+                <select formControlName="empType">
+                    <option value="">Employment Type</option>
+                    <option>Self-Employed</option>
+                    <option>Salaried</option>
+                </select><br/>
+                <button [disabled]="applyForm.invalid">Next</button>
+  
+            </form>
+  
+  
+  
+            <form *ngIf = "step2" [formGroup] = "documentDetails" (submit) = "onStep2()">
+                <label>Upload Aadhar Card</label><br/>
+                <p class = "validate" *ngIf = "documentDetails.controls.aadhar.errors && (documentDetails.controls.aadhar.touched ||documentDetails.controls.aadhar.dirty)">*Aadhar required</p>
+                <input type = "file" formControlName="aadhar" (change)="onFileselect($event)"><button type = "button" (click)="OnUploadFile()">Upload</button>
+                <br>
+                <label>Upload PAN Card</label><br/>
+                <p class = "validate" *ngIf = "documentDetails.controls.pan.errors && (documentDetails.controls.pan.touched ||documentDetails.controls.pan.dirty)">*Pan required</p>
+                <input type = "file" formControlName = "pan" (change)="onFileselect2($event)"><button type = "button" (click)="OnUploadFile2()">Upload</button>
+                <br/>
+                <label>Upload Address Proof</label><br/>
+                <p class = "validate" *ngIf = "documentDetails.controls.addressProof.errors && (documentDetails.controls.addressProof.touched ||documentDetails.controls.addressProof.dirty)">*Address Proof required</p>
+                <input type = "file" formControlName="addressProof" (change)="onFileselect3($event)"><button type = "button" (click)="OnUploadFile3()">Upload</button>
+                <br/>
+                <label>Upload Salary Slip</label><br/>
+                <p class = "validate" *ngIf = "documentDetails.controls.salary.errors && (documentDetails.controls.salary.touched ||documentDetails.controls.salary.dirty)">*Salary Slip required</p>
+                <input type = "file" formControlName="salary" (change)="onFileselect4($event)"><button type = "button" (click)="OnUploadFile4()">Upload</button>
+                <br/>
+                <button type = "button" (click)= "onStep2Prev()" >Previous</button>
+                <button [disabled]="documentDetails.invalid" type = "submit" >Next</button>
+  
+            </form>
+  
+            <form *ngIf = "step3" [formGroup] = "vehicleDetails" (submit)= "onStep3()">
+                <div class = "validate" *ngIf = "vehicleDetails.controls.chasis.errors && (vehicleDetails.controls.chasis.touched ||vehicleDetails.controls.chasis.dirty)">
+                    <p *ngIf="vehicleDetails.controls.chasis.errors?.required">*Chasis Number required</p>
+                    <p *ngIf="vehicleDetails.controls.chasis.errors?.pattern">*Enter Correct Chassis Number</p>
+                </div>
+                <input type = "text" placeholder="Chasis Number" formControlName = "chasis"><br/>
+                <p class = "validate" *ngIf = "vehicleDetails.controls.brand.errors && (vehicleDetails.controls.brand.touched ||vehicleDetails.controls.brand.dirty)">*Brand required</p>
+                <input type = "text" placeholder="Brand" formControlName="brand" ><br/>
+                <p class = "validate" *ngIf = "vehicleDetails.controls.model.errors && (vehicleDetails.controls.model.touched ||vehicleDetails.controls.model.dirty)">*Model required</p>
+                <input type = "text" placeholder="Model" formControlName="model"><br/>
+                <p class = "validate" *ngIf = "vehicleDetails.controls.exPrice.errors && (vehicleDetails.controls.exPrice.touched ||vehicleDetails.controls.exPrice.dirty)">*Ex-Showroom Price required</p>
+                <input type= "text" placeholder="Ex-Showroom Price" formControlName="exPrice"><br/>
+                <p class = "validate" *ngIf = "vehicleDetails.controls.type.errors && (vehicleDetails.controls.type.touched ||vehicleDetails.controls.type.dirty)">*Vehicle Type required</p>
+               
+                <select formControlName = "type">
+                    <option value = "">Vehicle type</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select><br>
+                <p class = "validate" *ngIf = "vehicleDetails.controls.onRoad.errors && (vehicleDetails.controls.onRoad.touched ||vehicleDetails.controls.onRoad.dirty)">*On road price required</p>
+                <input type = "text" placeholder="On Road Price" formControlName="onRoad"><br/>
+                <p class = "validate" *ngIf = "vehicleDetails.controls.color.errors && (vehicleDetails.controls.color.touched ||vehicleDetails.controls.color.dirty)">*Vehicle Colour required</p>
+                <input type = "text" placeholder="Vehicle Colour" formControlName="color"><br/>
+                <button type = "button" (click)= "onStep3Prev()">Previous</button>
+                <button [disabled]="vehicleDetails.invalid" type = "submit">Next</button>
+            </form>
+
+
+
+            <form *ngIf = "step4" [formGroup] = "loanDetails" (submit) = "onStep4()">
+                <p class = "validate" *ngIf = "loanDetails.controls.emi.errors && (loanDetails.controls.emi.touched ||loanDetails.controls.emi.dirty)">*Select Existing EMI</p>   
+                <input type ="text" placeholder="Existing EMI" formControlName = "emi"><br/>
+                <div class = "validate" *ngIf = "loanDetails.controls.loanAmount.errors && (loanDetails.controls.loanAmount.touched ||loanDetails.controls.loanAmount.dirty)">
+                    <p *ngIf = "loanDetails.controls.loanAmount.errors?.required">*Loan Amount required</p>
+                    <p *ngIf = "loanDetails.controls.loanAmount.errors?.min">Minimum Allowed Loan Amount is 1,00,000</p>
+                </div>
+                <input type = "number" placeholder="Loan Amount" formControlName ="loanAmount"><br/>
+                <p class = "validate" *ngIf = "loanDetails.controls.loanTenure.errors && (loanDetails.controls.loanTenure.touched ||loanDetails.controls.loanTenure.dirty)">*Loan Tenure required</p>
+                <input type = "number" placeholder="Loan Tenure" formControlName ="loanTenure"><br/>
+                <input type="number" placeholder="Loan Interest" formControlName = "interest"><br>
+                <div>
+                    <b>Loan Interest Range</b>
+                    <ul>
+                        <li>For Loan Amount Between 1,00,000 and 10,00,000 , Loan Interest = 13</li>
+                        <li>For Loan Amount Between 10,00,000 and 25,00,000 , Loan Interest = 14</li>
+                        <li>For Loan Amount Greater than 25,00,000 , Loan Interest = 15</li>
+                    </ul>
+                </div>
+                <p *ngIf="loanDetails.errors?.allowedEmi">The Existing EMI and the Current EMI together should be less than Your Monthly Salary</p>
+                <button type = "button" (click)= "onStep4Prev()">Previous</button>
+                <button [disabled]="loanDetails.invalid" type = "submit" >Submit</button>
+            </form>
+        </div>
+    </div>
+  
+  </div>
+
+
+  <div class = "statusPop" *ngIf = "showPopup1">
+    <div class = "popContainer">
+        <div>
+            <p style = "text-align: center; font-size: 1.25rem; color:rgb(5, 21, 44)">Document Uploaded succesfully.</p><br>
+            <button class = "popButton" (click) = "removePop1()">Click OK!</button>
+        </div>
+
+    </div> 
+
+</div>
+
+<div class = "statusPop" *ngIf = "showPopup2">
+    <div class = "popContainer">
+        <div>
+            <p style = "text-align: center; font-size: 1.25rem; color:rgb(5, 21, 44)">Your Loan application is successfully submitted. You can track the status of your application in your dashboard.</p><br>
+            <button class = "popButton" (click) = "removePop2()">Click OK!</button>
+        </div>
+
+    </div> 
+
+</div>
+
+<div class = "statusPop" *ngIf = "showPopup3">
+    <div class = "popContainer">
+        <div>
+            <p style = "text-align: center; font-size: 1.25rem; color:rgb(5, 21, 44)">Loan for this Chassis number is already applied.</p><br>
+            <button class = "popButton" (click) = "removePop3()">Click OK!</button>
+        </div>
+
+    </div> 
+
+</div>
+
+
+<div class = "statusPop" *ngIf = "showPopup4">
+    <div class = "popContainer">
+        <div>
+            <p style = "text-align: center; font-size: 1.25rem; color:rgb(5, 21, 44)">Sorry! Your previous loan application is pending. You cannot apply for another loan.</p><br>
+            <button class = "popButton" (click) = "removePop4()">Click OK!</button>
+        </div>
+
+    </div> 
+
+</div>

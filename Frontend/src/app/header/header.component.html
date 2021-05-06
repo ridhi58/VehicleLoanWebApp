@@ -1,0 +1,25 @@
+<header>
+
+	<div class="headContainer">
+		<div class ="cont2">
+			<img src="../../assets/Screenshot (134).png" alt="">
+			<ul class="loginMain">
+
+				<li><a href="#">Home</a></li>
+				<li><a href={{link}}>Apply Loan</a></li>
+				<li><a href="emi-calculator">EMI Calculator</a></li>
+				<li><a href="eligibility">Eligibility</a></li>				
+				<li  class = "drop" style = "margin-top:-0.5rem;" ><button (click)="loginClick()"><i class="fa fa-user" aria-hidden="true"></i><a style = "color: #083247;  font-weight: 600;">{{name | firstWord }}</a></button>
+					<ul *ngIf="showDrop">
+						<li><button (click)="Dashboard()"><a style = "color: #083247;  font-weight: 500;border:none">Dashboard</a></button></li>
+						<li><button (click)="logOut()"><a style = "color: #083247;  font-weight: 500;">Log out</a></button></li>
+					</ul>
+				</li>
+
+			</ul>
+			</div>
+
+	</div>
+
+
+</header>

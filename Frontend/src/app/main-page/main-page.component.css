@@ -1,0 +1,134 @@
+
+img{
+    object-fit: cover;
+    vertical-align: middle;
+}
+
+.slider{
+    height:400px;
+   
+    background-color: rgb(218, 218, 218)
+}
+
+.main2{
+    margin-top:1rem;
+    margin-right:2.5rem;
+    margin-left: 2.5rem;
+   
+}
+.about{
+    
+    padding:5rem 1rem 2rem 0rem ;
+}
+.about h1{
+  text-align: center;
+  font-size: 2.5rem;
+  color:#2b413e
+
+}
+.about p{
+    font-size: 1.5rem;
+    line-height: 28px;
+    text-align:justify;
+}
+
+.cards{
+margin:1rem ; 
+display: flex;
+flex-wrap: wrap;
+justify-content:space-between;
+}
+.card img{
+    width:400px;
+    height:220px;
+}
+.card{
+   
+    width:400px;  
+    height:500px;
+    box-shadow: 3px 3px 5px 6px #ccc;
+    margin-bottom: 1rem;;
+   
+}
+.card p{
+    margin:1.5rem 0.5rem;
+    text-align: justify;
+
+}
+.card h3{
+    margin:0.5rem;
+    font-size:1.3rem;
+    color:rgba(0,0,0,0.8)
+}
+.card button{
+    margin:auto;
+    display:block;
+    padding:12px 28px;
+    background:#f5821f;
+    border:0;
+    font-weight:100;
+  }
+  .card button a{
+      color: white;
+      text-decoration: none;
+      font-size: large;
+  }
+.card:hover{
+    transform:scale(1.05);
+    transition: all .2s ease-in-out;
+}
+.card button a:hover{
+    color:rgba(255,255,255,0.8);
+}
+  
+.blogs{
+    display: flex;
+    background-color: #f8f8f8;
+    justify-content: space-between;
+    padding:4rem;
+    margin-bottom: 2rem;
+}
+
+.blogs div{
+  
+}
+
+.blogs div p{
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    color: gray;
+}
+.p1 i{
+font-size: 3rem;
+color:orange
+}
+.p2{
+    color:#0c4678;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.p3{
+    font-size: 1.1rem;
+    width:80%;
+    margin: auto;
+}
+
+@media(max-width:700px)
+{
+    .blogs{
+        padding:0.5rem;
+    }
+    .p2{
+        font-size: 1.2rem;
+    }
+    .p3{
+        font-size: 1rem;
+    }
+
+    .image{
+        height:400px;
+   
+    }
+}

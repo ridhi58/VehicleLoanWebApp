@@ -1,0 +1,58 @@
+<div class="login" >
+    <div class = "top">
+        <a href = "">Home > </a>
+        <a href = "app-login">Login > </a>
+        <a href = "admin-login">Admin Login</a>
+    </div>
+    <div class = "login-frame">
+        <div class="login-img">
+            <img src = "../../assets/Capture.PNG" height =500px width = 100%> 
+        </div>
+
+        <div class="login-content">
+            <p class="welcome">Welcome!</p> 
+            <p class = "sign" >Sign in to your account</p> 
+
+            <form [formGroup] = "adminLoginForm" (submit) = "adminLogin()" >   
+                <p class = "validate" *ngIf = "adminLoginForm.controls.adminUsername.errors && (adminLoginForm.controls.adminUsername.touched ||adminLoginForm.controls.adminUsername.dirty)">*Username required</p>  
+                <p  class ="validate" *ngIf="adminLoginForm.controls.adminUsername.errors?.pattern"> Provide a valid email id. </p>
+                <input type="text" placeholder=" Username" formControlName = "adminUsername" > <br>
+                <p class = "validate" *ngIf = "adminLoginForm.controls.adminPassword.errors && (adminLoginForm.controls.adminPassword.touched || adminLoginForm.controls.adminPassword.dirty)">*Password required</p>  
+                <input type="password" placeholder="password" formControlName = "adminPassword"> 
+                <p class="forgot"><a href="">Forgot Password?</a></p> 
+               <button type="submit" [disabled] ="adminLoginForm.invalid" >Login</button>
+              
+        
+            </form>
+    
+        </div>
+    </div>
+  </div>
+
+
+
+  
+<div class = "statusPop" *ngIf = "showPopup1">
+    <div class = "popContainer">
+        <div>
+            <p style = "text-align: center; font-size: 1.25rem; color:rgb(5, 21, 44)">You are successfully logged in.</p><br>
+            <button class = "popButton" (click) = "removePop1()">Click OK!</button>
+        </div>
+
+    </div> 
+
+</div>
+
+
+
+
+<div class = "statusPop" *ngIf = "showPopup2">
+    <div class = "popContainer">
+        <div>
+            <p style = "text-align: center; font-size: 1.25rem; color:rgb(5, 21, 44)">Sorry! You are not registered with us. Kindly register yourself</p><br>
+            <button class = "popButton" (click) = "removePop2()">Click OK!</button>
+        </div>
+
+    </div> 
+
+</div>

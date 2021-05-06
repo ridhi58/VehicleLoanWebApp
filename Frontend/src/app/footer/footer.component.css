@@ -1,0 +1,36 @@
+.footer{
+    margin:0;
+    padding:0;
+    height:300px;
+    background-color: #31353D;
+    color: white;
+    font-size: 20px;
+   
+}
+
+.main{
+
+    display: flex;
+    margin-bottom: 2rem;
+   
+    
+    
+}
+li{
+   list-style:none;   
+   padding: 10px;
+   text-align: left;
+  
+}
+a{
+    text-decoration: none;
+    color:white;
+}
+a:hover{
+    color: rgb(238, 116, 116);
+}
+
+/* i{
+    color: rgb(238, 116, 116);
+   
+} */

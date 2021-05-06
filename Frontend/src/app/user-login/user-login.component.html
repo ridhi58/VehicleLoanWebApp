@@ -1,0 +1,59 @@
+<div class="login" >
+    <div class = "top">
+        <a href = "">Home > </a>
+        <a href = "app-login">Login > </a>
+        <a href = "user-login">User Login</a>
+        </div>
+
+       
+    <div class = "login-frame">
+        <div class="login-img">
+            <img src = "../../assets/Capture.PNG" height =500px width = 100%> 
+        </div>
+
+        <div class="login-content">
+            <p class="welcome">Welcome!</p> 
+            <p class = "sign" >Sign in to your account</p> 
+
+            <form [formGroup] = "userLoginForm" (submit) ="onLogin()" >             
+                <p class = "validate" *ngIf = "userLoginForm.controls.username.errors && (userLoginForm.controls.username.touched || userLoginForm.controls.username.dirty)">*Username required</p>  
+                <input type="text" placeholder=" Username" formControlName = "username" > <br>
+                <p class = "validate" *ngIf = "userLoginForm.controls.password.errors && (userLoginForm.controls.password.touched || userLoginForm.controls.password.dirty)">*Password required</p>  
+                <input type="password" placeholder="password" formControlName = "password"> 
+                <p class="forgot"><a href="forgot">Forgot Password?</a></p> 
+                <button type="submit" [disabled] ="userLoginForm.invalid">Login</button>
+                <p>Not a registered user? <a href="register">Sign up</a></p>
+        
+            </form>
+    
+        </div>
+    </div>
+  </div>
+
+
+  
+
+<div class = "statusPop" *ngIf = "showPopup1">
+    <div class = "popContainer">
+        <div>
+            <p style = "text-align: center; font-size: 1.25rem; color:rgb(5, 21, 44)">You are successfully logged in.</p><br>
+            <button class = "popButton" (click) = "removePop1()">Click OK!</button>
+        </div>
+
+    </div> 
+
+</div>
+
+
+
+
+<div class = "statusPop" *ngIf = "showPopup2">
+    <div class = "popContainer">
+        <div>
+            <p style = "text-align: center; font-size: 1.25rem; color:rgb(5, 21, 44)">Sorry! You are not registered with us. Kindly register yourself</p><br>
+            <button class = "popButton" (click) = "removePop2()">Click OK!</button>
+        </div>
+
+    </div> 
+
+</div>

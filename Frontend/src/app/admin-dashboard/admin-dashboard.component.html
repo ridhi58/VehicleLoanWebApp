@@ -1,0 +1,451 @@
+
+
+
+
+
+
+
+
+<div class="adminDash">
+    <div class="adminMain">
+
+        <div class="left">
+
+            <ul>
+                <li><i class="fa fa-user-plus" aria-hidden="true"></i><button (click)="list1()">All Users</button></li>
+                <li><i class="fa fa-window-restore" aria-hidden="true"></i><button (click)="list2()">Accepted
+                        Applications</button></li>
+                <li><i class="fa fa-id-badge" aria-hidden="true"></i><button (click)="list3()">Rejected
+                        Applications</button></li>
+                
+           
+
+            </ul>
+        </div>
+
+        <div class="right" *ngIf="list1Show">
+            <div class="adminBlue">
+
+
+                <table>
+                    <thead>
+                        <tr class="white">
+                            <td></td>
+                            <td>S no.</td>
+                            <td>Name</td>
+                            <td>Email</td>                        
+                            <td>Mobile</td>                        
+                            <td>View</td>
+                            <td>View</td>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let u of users;let i=index">
+                        <tr class="alt">
+                            <td><input style="width:20px;height:20px; " type="checkbox"></td>
+                            <td>{{i+1}}</td>
+                            <td>{{u.name}}</td>
+                            <td>{{u.email}}</td>
+                           
+                            <td>{{u.mobile}}</td>
+                         
+                            <td><button (click)="viewForm(u )"
+                                    style="border:3px solid #90cfe2; color: #25afda; background-color: white; border-radius:10px ">Loan
+                                    Applications
+                                    Form</button></td>
+                                    <td><button (click)="viewBasicDetails(u.email,u.gender , u.age,u.mobile)"
+                                        style="border:3px solid #90cfe2; color: #25afda; background-color: white; border-radius:10px ">
+                                       
+                                    Basic Details</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+        <div class="right" *ngIf="list2Show">
+            <div class="adminBlue">
+                <table>
+                    <thead>
+                        <tr class="white">
+                            <td></td>
+                            <td>S no.</td>
+                            <td>Name</td>
+                            <td>Email</td>
+                          
+                            <td>View </td>
+                      
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let u of approvedUsers;let i=index">
+                        <tr class="alt">
+                            <td><input style="width:20px;height:20px; " type="checkbox"></td>
+                            <td>{{i+1}}</td>
+                            <td>{{u.name}}</td>
+                            <td>{{u.email}}</td>
+                       
+                            <td><button  style="border:3px solid rgb(16, 202, 16); color: rgb(6, 136, 6); background-color: white; border-radius:10px " (click)="showApprovedButton(u.email)" >
+                                    Approved Application Details</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <div class="right" *ngIf="list3Show">
+            
+            <div  class="adminBlue">
+                <table>
+                    <thead>
+                        <tr class="white">
+                            <td></td>
+                            <td>S no.</td>
+                            <td>Name</td>
+                            <td>Email</td>
+                            <td>View </td>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let u of rejectedUsers;let i=index">
+                        <tr class="alt">
+                            <td><input style="width:20px;height:20px; " type="checkbox"></td>
+                            <td>{{i+1}}</td>
+                            <td>{{u.name}}</td>
+                            <td>{{u.email}}</td>
+                            <td><button (click)="showRejectedButton(u.email)" style="border:3px solid rgb(255, 60, 0); color: rgb(245, 76, 76); background-color: white; border-radius:10px ">View
+                                    Rejected Application Details</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div *ngIf="view" class="view">
+        <div style="background-color: white">
+            <button style="background-color:red; border:none; padding:0.75rem" (click)="close()"><i class="fa fa-times"
+                    aria-hidden="true"></i></button>
+            <div>
+                <div *ngFor="let l of loanUser;let i=index">
+                    <div class="fields">
+                        <p style="font-size:1.3rem ; font-weight:bold;">Loan Application {{i+1}}</p>
+                        <fieldset style="width:97%">
+                            <legend>User Details ID</legend>
+                            <p>{{l.user.userId}}</p>
+                        </fieldset>
+                        <fieldset style="width:97%">
+                            <legend>Chassis Number</legend>
+                            <p>{{l.chassisNo}}</p>
+                        </fieldset>
+                        <fieldset style="width:97%">
+                            <legend>Status</legend>
+                            <p>{{l.status}}</p>
+                        </fieldset>
+                        <div style="display: flex;">
+                            <fieldset>
+                                <legend>Vehicle Brand</legend>
+                                <p>{{l.brand}}</p>
+                            </fieldset>
+                            <fieldset>
+                                <legend>Vehicle Color</legend>
+                                <p>{{l.colour}}</p>
+                            </fieldset>
+                        </div>
+                        <div style="display: flex;">
+                            <fieldset>
+                                <legend>Vehicle Model</legend>
+                                <p>{{l.model}}</p>
+                            </fieldset>
+                            <fieldset>
+                                <legend>Vehicle Type</legend>
+                                <p>{{l.type}}</p>
+                            </fieldset>
+                        </div>
+                        <div style="display: flex;">
+                            <fieldset>
+                                <legend>Ex-ShowRoom Price</legend>
+                                <p>{{l.exShowPrice}}</p>
+                            </fieldset>
+                            <fieldset>
+                                <legend>On Road price</legend>
+                                <p>{{l.onRoadPrice}}</p>
+                            </fieldset>
+                        </div>
+                        <div style="display: flex;">
+                            <fieldset>
+                                <legend>ExistingEMI</legend>
+                                <p>{{l.existingEMI}}</p>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>Tenure</legend>
+                                <p>{{l.tenure}}</p>
+                            </fieldset>
+                        </div>
+                        <div style="display: flex;">
+
+                            <fieldset>
+                                <legend>Interest</legend>
+                                <p>{{l.interest}}</p>
+                            </fieldset>
+                            <fieldset>
+                                <legend>Amount</legend>
+                                <p>{{l.amount}}</p>
+                            </fieldset>
+                        </div>
+
+                        <div style="margin-top: 1.5rem ">
+                            <button (click)="accept(l.chassisNo)" *ngIf="l.status=='PENDING'"
+                                style="background-color:rgb(35, 175, 35); margin-right: 1.2rem;">Accept</button>
+                            <button (click)="reject(l)" *ngIf="l.status=='PENDING'" style="background-color: rgb(202, 46, 46)">Reject</button>
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf = "viewBasic" class="view">
+        <div style="background-color: white">
+            <button style="background-color:red; border:none; padding:0.75rem" (click)="closeBasic()"><i class="fa fa-times"
+                    aria-hidden="true"></i></button>
+                    <div>
+                        <div class ="fields">
+                            <fieldset style="width:97%">
+                                <legend>User ID</legend>
+                                <p>{{b.userId}}</p>
+                            </fieldset>
+                            <fieldset style="width:97%">
+                                <legend>Mobile</legend>
+                                <p>{{mobile}}</p>
+                            </fieldset>
+                            <fieldset style="width:97%">
+                                <legend>Gender</legend>
+                                <p>{{gender}}</p>
+                            </fieldset>
+                            <fieldset style="width:97%">
+                                <legend>Age</legend>
+                                <p>{{age}}</p>
+                            </fieldset>
+                            <div>
+                            <fieldset style="width:97%">
+                                <legend>Address</legend>
+                                <p>{{b.address}}</p>
+                            </fieldset>
+                            <fieldset style="width:97%">
+                                <legend>State</legend>
+                                <p>{{b.state}}</p>
+                            </fieldset>
+                        </div>
+                        <div  style="display: flex;">
+                            <fieldset style="width:97%">
+                                <legend>City</legend>
+                                <p>{{b.city}}</p>
+                            </fieldset>
+                            <fieldset style="width:97%">
+                                <legend>Pin</legend>
+                                <p>{{b.pin}}</p>
+                            </fieldset>
+                        </div>
+                        <div  style="display: flex;">
+                            <fieldset style="width:97%">
+                                <legend>Employment type</legend>
+                                <p>{{b.emptype}}</p>
+                            </fieldset>
+                            <fieldset style="width:97%">
+                                <legend>Salary</legend>
+                                <p>{{b.salary}}</p>
+                            </fieldset>
+                        </div>
+                        <div  style="display: flex;">
+                            <fieldset style="width:97%">
+                                <legend>Aadhar Proof</legend>
+                                <p><a [href] = "b.aadhar">{{b.aadhar}}</a></p>
+                            </fieldset>
+                            <fieldset style="width:97%">
+                                <legend>Pan Card</legend>
+                                <p><a [href] = "b.pan">{{b.pan}}</a></p>
+                            </fieldset>
+                        </div>
+                        <div  style="display: flex;">
+                            <fieldset style="width:97%">
+                                <legend>Salary Slip</legend>
+                                <p><a [href] = "b.salarySlip">{{b.salarySlip}}</a></p>
+                            </fieldset>
+                            <fieldset style="width:97%">
+                                <legend>Address Proof</legend>
+                                <p><a [href] = "b.addressProof">{{b.addressProof}}</a></p>
+                            </fieldset>
+                        </div>
+
+
+                        </div>
+    
+                    </div>
+        </div>
+
+    </div>
+
+    <div *ngIf="viewApproved" class="view">
+
+               <button style="background-color:red; border:none padding:0.75rem" (click)="closeApprove()"><i
+                class="fa fa-times" aria-hidden="true"></i></button>
+        <div style = "min-height:700px;">
+            <table>
+                <thead>
+                    <tr  class="white">
+                        <td>Loan ID</td>
+                        <td>Account No.</td>
+                        <td>EMI</td>
+                        <td>EMI Starting Date</td>
+                        <td> View</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let a of approveDetailsByemail">
+                        <td>{{a.loanId}}</td>
+                        <td>{{a.account.acc_no}}</td>
+                        <td>{{a.emi}}</td>
+                        <td>{{a.emidate}}</td>
+                        <td><button (click)="emiDetails(a.loanId)" style="background-color: white; border:1px solid black;border-radius:10px;color:rgb(23, 23, 56)">View Emi
+                                details</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class = "emiBody" *ngIf="emiView">
+                <thead>
+                    <tr class = "emiHead">
+                        <td>date</td>
+                        <td>beginningBalance</td>
+                        <td>emi</td>
+                        <td>principal</td>
+                        <td>interest</td>
+                        <td>endingBalance</td>
+                        <td>status</td>
+                    </tr >
+                    <tr   *ngFor="let e of emiTable">
+                        <td>{{e.date}}</td>
+                        <td>{{e.beginningBalance}}</td>
+                        <td>{{e.emi}}</td>
+                        <td>{{e.principal}}</td>
+                        <td>{{e.interest}}</td>
+                        <td>{{e.endingBalance}}</td>
+                        <td>{{e.status}}</td>
+                    </tr>
+                </thead>
+            </table>
+
+
+        </div>
+
+    </div>
+
+    <div *ngIf="viewRejected" class="view">
+
+        <button style="background-color:red; border:none; padding:0.75rem" (click)="closeReject()"><i
+                class="fa fa-times" aria-hidden="true"></i></button>
+        <div>
+
+            <div *ngFor="let l of rejectedDetailsByEmail;let i=index">
+                <div class="fields">
+                    <p style="font-size:1.3rem ; font-weight:bold;">Loan Application {{i+1}}</p>
+                    <fieldset style="width:97%">
+                        <legend>User Details ID</legend>
+                        <p>{{l.user.userId}}</p>
+                    </fieldset>
+                    <fieldset style="width:97%">
+                        <legend>Chassis Number</legend>
+                        <p>{{l.chassisNo}}</p>
+                    </fieldset>
+                    <fieldset style="width:97%">
+                        <legend>Status</legend>
+                        <p>{{l.status}}</p>
+                    </fieldset>
+                    <div style="display: flex;">
+                        <fieldset>
+                            <legend>Vehicle Brand</legend>
+                            <p>{{l.brand}}</p>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Vehicle Color</legend>
+                            <p>{{l.colour}}</p>
+                        </fieldset>
+                    </div>
+                    <div style="display: flex;">
+                        <fieldset>
+                            <legend>Vehicle Model</legend>
+                            <p>{{l.model}}</p>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Vehicle Type</legend>
+                            <p>{{l.type}}</p>
+                        </fieldset>
+                    </div>
+                    <div style="display: flex;">
+                        <fieldset>
+                            <legend>Ex-ShowRoom Price</legend>
+                            <p>{{l.exShowPrice}}</p>
+                        </fieldset>
+                        <fieldset>
+                            <legend>On Road price</legend>
+                            <p>{{l.onRoadPrice}}</p>
+                        </fieldset>
+                    </div>
+                    <div style="display: flex;">
+                        <fieldset>
+                            <legend>ExistingEMI</legend>
+                            <p>{{l.existingEMI}}</p>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Tenure</legend>
+                            <p>{{l.tenure}}</p>
+                        </fieldset>
+                    </div>
+                    <div style="display: flex;">
+
+                        <fieldset>
+                            <legend>Intrest</legend>
+                            <p>{{l.interest}}</p>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Amount</legend>
+                            <p>{{l.amount}}</p>
+                        </fieldset>  
+
+        
+
+        </div>
+
+    </div>
+
+
+
+    
+  <div class = "statusPop" *ngIf = "showPopup1">
+    <div class = "popContainer">
+        <div>
+            <p style = "text-align: center; font-size: 1.25rem; color:rgb(5, 21, 44)">Loan application accepted successfully.</p><br>
+            <button class = "popButton" (click) = "removePop1()">Click OK!</button>
+        </div>
+
+    </div> 
+
+</div>
+
+<div class = "statusPop" *ngIf = "showPopup2">
+    <div class = "popContainer">
+        <div>
+            <p style = "text-align: center; font-size: 1.25rem; color:rgb(5, 21, 44)">Loan application rejected successfully.</p><br>
+            <button class = "popButton" (click) = "removePop2()">Click OK!</button>
+        </div>
+
+    </div> 

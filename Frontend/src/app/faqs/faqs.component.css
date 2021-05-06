@@ -1,0 +1,11 @@
+li{
+    padding: 15px;
+    font-family: 'Trebuchet MS';
+    font-size: large;
+   
+   
+}
+div{
+    display: flex;
+    padding: 15px;
+}

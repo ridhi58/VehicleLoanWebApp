@@ -1,0 +1,79 @@
+
+<div class = "eligible">
+   
+<div class = "box">
+    <div class= "card1Cont">
+      <div class = "card1">
+        <div>
+            <p>Simple.Quick.Secure</p>
+            <p style = "color:red; font-weight:bold; font-size:2rem">Vehicle Loans</p>
+            <ul>
+                <li><i id ="icon" class="fa fa-credit-card" aria-hidden="true"></i> Instant Approvals</li>
+                <li><i  id ="icon" class="fa fa-credit-card" aria-hidden="true"></i>Easy Documentation</li>
+                <li><i  id ="icon" class="fa fa-credit-card" aria-hidden="true"></i>Part Payment Option also available</li>
+                <li><i  id ="icon" class="fa fa-credit-card" aria-hidden="true"></i>Loan Up to Rs. 40 Lacs</li>
+                <li><i id ="icon"  class="fa fa-database" aria-hidden="true"></i>ROI as low as 10.75%</li>
+                <li><i  id ="icon" class="fa fa-credit-card" aria-hidden="true"></i>Periodic Offers</li>
+            </ul>
+        </div>
+      </div>
+
+      <div class = "card2">
+          <div>
+          <p class = "head">Applicant Details</p>
+          <form>
+              <input type = "text" placeholder="First Name">
+              <input type = "text" placeholder="Last Name"><br/>
+              <input type = "text" placeholder="Date of Birth">
+              <input type = "text" placeholder="Email"><br/>
+              <input type = "text" placeholder="Mobile number">
+              <input type = "text" placeholder="State"><br/>
+              <input type = "text" placeholder="city">
+              <input type = "text" placeholder="Gender"><br/>
+
+          </form>
+          </div>
+
+      </div>
+    </div>
+
+      <div class = "card3">
+          <div class = "card3Cont">
+            <form (ngSubmit)=checkeligiblity() ngNativeValidate>
+            <p class = "head">Other Details</p>
+                    <table>
+                       
+                        <tr>                          
+                            <td><input type="text" placeholder="Vehicle Brand " value=""></td>
+                            <td> <input type="text" placeholder="Vehicle Model  " value=""></td>
+                        </tr>
+                       
+                        <tr>                           
+                            <td><input type="text" placeholder="Ex ShowRoom Price " value=""></td>
+                            <td><input type="number" placeholder="On Road Price " name="onRoadPrice" [(ngModel)]="onRoadPrice" required></td>
+                        </tr>
+                        <tr>                 
+                            <td><input type="text" placeholder=" Employment Type " value=""></td>
+                            <td><input type="number" placeholder="Annual Salary " name="annualSalary" [(ngModel)]="annualSalary" required></td>
+                        </tr>
+                        <tr>                  
+                            <td><input type="number" placeholder="Existing EMI" name="Existing EMI existingEMI" [(ngModel)]="existingEMI" required></td>
+                            <td><input type = "number" name="loanTenure" placeholder = "Loan Tenure" [(ngModel)]="loanTenure" required/></td>
+                        </tr>
+                   
+                    </table>
+
+
+                <input class = "button" type="submit" value="Check Eligibilty">
+               
+                <button [disabled]="!eligible" >Apply LOAN</button>
+            </form>
+        </div>
+        </div>
+
+
+
+</div>
+
+</div>
+

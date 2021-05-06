@@ -1,0 +1,134 @@
+.eligible{
+    margin-top:75px;
+    background-image: url("https://niveshamindia.com/wp-content/uploads/2020/06/car-loan.jpg");
+    padding-top:8rem;
+   
+}
+
+input{
+    font-size:1.2rem;
+}
+
+li{
+    list-style: none;
+}
+
+.card1Cont{
+    display: flex;
+    justify-content: space-between;
+    width:90%;
+    margin:auto;
+    margin-bottom: 2rem;
+  
+}
+
+.card1{
+    width:30%;
+    padding:2rem;
+  
+}
+.card2{
+    width: 60%;
+    
+    
+}
+.card2 div{
+    width:90%;
+    margin:auto;
+    padding-left:3rem;
+}
+ .card2,.card3{
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 3px 12px rgba(25,30,36,.33);
+}
+.card1 {
+    background-color: rgba(255,255,255,0.9);
+}
+
+.card3{
+    width:90%;
+    margin:auto;
+    padding-top:3rem;
+}
+
+#icon{
+    margin-right:1rem;
+}
+
+.card1 ul li{
+    font-size: 1.4rem;
+    margin-bottom: 2.2rem;
+
+}
+.card1 p{
+    text-align: center;
+    font-size:2rem;
+
+}
+
+.card2 input  {
+    border:0;
+    border-bottom: 1px solid gray;
+    padding:2rem;
+margin-right:1.5rem;    
+    margin-bottom:1rem;
+    width:30%;
+}
+.head{
+    text-align: center;
+    font-size: 2rem;
+}
+.card3Cont{
+    
+    width:80%;
+   margin:auto;
+}
+
+.card3Cont table tr td input{
+    border:0;
+    border-bottom: 1px solid gray;
+    width:70%;
+    padding:2rem;
+    margin:1rem 18rem 1rem 1.5rem;
+}
+
+.button , button{
+    padding:1rem 2rem;
+    color:white;
+    background-color: orangered;
+   margin: 2.5rem 4rem 2.5rem 1rem;
+   font-size: 1.3rem;
+   cursor: pointer;
+   width:200px;
+ 
+}
+
+.button:hover , button:hover{
+    transform: scale(1.05);
+}
+
+@media(max-width:950px)
+{
+    .card1Cont{
+        flex-direction: column;
+    }
+
+    .card1 , .card3{
+        width:90%;
+        
+    }
+
+    .card2{
+        width:100%;
+        margin-top:2rem;
+    }
+
+    .card3Cont table tr td input{
+       margin:0;
+    }
+    
+    .button{
+        margin-bottom: 0.5rem;
+    }
+}

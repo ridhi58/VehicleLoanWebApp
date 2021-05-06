@@ -1,0 +1,199 @@
+<div class="userDash">
+
+    <div class="top">
+        <button (click)="click1()" class="notclicked" [ngClass]="{'clicked':isClicked}">Registration Details</button>
+        <button (click)="click2()" class="notclicked" [ngClass]="{'clicked':isClicked2}">Personal Details</button>
+        <button (click)="click3()" class="notclicked" [ngClass]="{'clicked':isClicked3}">Loan Applications</button>
+    </div>
+
+    <!--USER REGISTRATION DETAILS-->
+    <div *ngIf="show1" class="bottom">
+        <div class="div1">
+            <p class="p1">Thinking about buying your dream vehicle?</p>
+            <p class="p2">Your dream of owning a vehicle is now a reality </p>
+            <p class="p2">with Wheels4Hope.</p>
+            <p class="p3">Making India self-Reliant</p>
+        </div>
+
+        <div class="div2">
+            <label>Full Name</label><br>
+            <input type=text value={{user1.name}}><br>
+            <label>Email Id</label><br>
+            <input type="text" value={{user1.email}}><br>
+            <label>Age</label><br>
+            <input type="text" value={{user1.age}}><br>
+            <label>Gender</label><br>
+            <input type="text" value={{user1.gender}}><br>
+            <label>Mobile Number</label><br>
+            <input type="text" value={{user1.mobile}}><br>
+        </div>
+    </div>
+
+    <!--USER PERSONAL DETAILS-->
+    <div *ngIf="show2" class="bottom">
+        <div class="Personaldiv1">
+            <p class="p1">Your Personal Details </p>
+        </div>
+        <div class="div2">
+            <form [formGroup]="edit">
+                <label>Address</label><br>
+                <input type=text formControlName="address"><br>
+                <label>State</label><br>
+                <input type="text" formControlName="state"><br>
+                <label>City</label><br>
+                <input type="text" formControlName="city"><br>
+                <label>Pin Code</label><br>
+                <input type="text" formControlName="pin"><br>
+                <label>Employement Type</label><br>
+                <input type="text" formControlName="empType"><br>
+                <label>Annual Salary</label><br>
+                <input type="text" formControlName="salary"><br>
+
+            </form>
+        </div>
+    </div>
+
+
+    <!--USER LOAN APPLICATIONS-->
+    <div *ngIf="show3" class="bottomPage3">
+
+        <p style="margin-left:1.8rem;" class="p1">Your Loan Application Details</p>
+        <div class="flexD">
+
+            <div class="page3div1">
+
+
+                <div class="loan" *ngFor="let l of loan ;let i=index">
+
+                    <button class="statusButton">Loan Status : {{l.status}}</button>
+
+                    <div class="loanDetails">
+
+                        <div class="loanDetailsInner">
+                            <div>
+                                <p>Loan Amount</p>
+                                <p>Chassis Number</p>
+                                <p>Exising EMI</p>
+                                <p>Tenure</p>
+                                <p>Interest</p>
+                            </div>
+                            <div>
+                                <p>: ₹ {{l.amount}}</p>
+                                <p>: {{l.chassisNo}}</p>
+                                <p>: ₹ {{l.existingEMI}} </p>
+                                <p>: {{l.tenure}} years</p>
+                                <p>: {{l.interest}} %</p>
+                            </div>
+                            <div>
+                                <p> Brand</p>
+                                <p>Type of Vehicle</p>
+                                <p>EX ShowRoom Price</p>
+                                <p>On Road price</p>
+                                <p>Application Date</p>
+                            </div>
+                            <div>
+                                <p>: {{l.brand | titlecase }} </p>
+                                <p>: {{l.type }} Wheeler </p>
+                                <p>: ₹ {{l.exShowPrice}}</p>
+                                <p>: ₹ {{l.onRoadPrice}}</p>
+                                <p>: {{l.appdate | date:'fullDate'}}</p>
+                            </div>
+                        </div>
+                        <div>
+                        </div>
+
+                        <!--LOAN EMI DETAILS IF STATUS IS APPROVED-->
+                        <div>
+                            <button class="emiButton" *ngIf="l.status=='APPROVED'" (click)="emiDetails(l.approved.loanId)">Show EMI Details</button>
+                            <button class="emiButton" *ngIf="l.status=='APPROVED'"
+                                (click)="noPopup(l.approved.loanId,l.approved.account.acc_no,l.approved.emi,l.approved.emidate)">Approved
+                                Details</button>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="page3div2">
+
+                <img width=100% height=300px
+                    src="https://www.psymbolic.com/wp-content/uploads/2018/09/auto-loans-2017-300x240.jpg">
+
+                <marquee>Wheels4Hope. Vehicle financing at its best</marquee>
+                <p>Calculate your emi here with <a href="emi-calculator"> EMI Calculator </a> and apply for multiple
+                    loans now with the best interest rates. </p>
+
+                <p><a style="font-size:1.5rem" href="apply-loan">Apply for Loan </a></p>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
+<div *ngIf="showPopup1" class="popup">
+    <div class="popContainer">
+        <button style="background-color:red; border:none; padding:0.75rem" (click)="closepop1()"><i class="fa fa-times"
+                aria-hidden="true"></i></button>
+        <div>
+            <table class="emiTables">
+                <thead>
+                    <tr class="head">
+                        <td>Date</td>
+                        <td>Beginning Balance</td>
+                        <td>EMI</td>
+                        <td>Principal</td>
+                        <td>Interest</td>
+                        <td>Ending Balance</td>
+                        <td>Status</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="body" *ngFor="let e of emiTable">
+                        <td>{{e.date | date:'longDate'}}</td>
+                        <td>₹ {{e.beginningBalance}}</td>
+                        <td>₹ {{e.emi}}</td>
+                        <td>₹ {{e.principal}}</td>
+                        <td>₹ {{e.interest}} </td>
+                        <td> ₹ {{e.endingBalance}}</td>
+                        <td>{{e.status}}</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+
+
+    </div>
+</div>
+
+
+<div *ngIf="showPopup2" class="popup" style="width:99%; height:100vh">
+    <div class="popContainer2">
+        <button style="background-color:red; border:none; padding:0.75rem" (click)="closepop2()"><i class="fa fa-times"
+                aria-hidden="true"></i></button>
+        <div class="loanDetailsInner" style="padding: 1.5rem 2.5rem">
+            <div style=" color: #042030 ;
+            font-weight: 700;">
+                <p>Loan Application Id</p>
+                <p>Account Number</p>
+                <p>EMI </p>
+                <p>EMI start date</p>
+            </div>
+
+            <div style=" color: #042030 ;
+            font-weight: 700;">
+                <p>{{a}}</p>
+                <p>{{b}}</p>
+                <p>₹ {{c}}</p>
+                <p>{{d | date:'longDate'}}</p>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>

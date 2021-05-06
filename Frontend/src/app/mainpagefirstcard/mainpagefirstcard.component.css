@@ -1,0 +1,27 @@
+div{
+    
+   width:90%;
+    background-color:  #f8f8f8;
+}
+div h1{
+    text-align: center;
+    color: rgb(214, 71, 71);
+    
+}
+.main{
+    display: flex;
+    background-color: #f8f8f8;
+    justify-content: space-between;
+    padding:4rem;
+    margin-bottom: 2rem;
+    width:90%;
+}
+img{
+    padding: 10px;
+    width: 600px;
+    height: 500px;
+}
+p{
+    font-style: normal;
+    padding: 10px;
+}

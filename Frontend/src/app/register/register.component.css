@@ -1,0 +1,148 @@
+
+.register{
+    margin-top:75px;
+    background: linear-gradient(to right,  rgb(219, 219, 228) 25%, 0%, rgb(219, 219, 228) 25%, white 25%, white 100%);
+    padding-top:10rem;
+}
+
+
+
+.main{
+    width: 50%;
+    background-color: white;
+    padding: 2rem;
+    margin:  auto;
+    box-shadow: 3px 3px 5px 6px #ccc; 
+    
+
+}
+.head{
+    text-align: center;
+    margin-bottom: 4rem;
+    color:#02324b;
+    font-size: 2.5rem;
+}
+
+
+
+.column{
+  display: flex;
+  margin-bottom: 1rem;
+}
+.col-label{
+   
+   width: 25%;
+
+}
+
+input,select{
+    padding: 1.2rem;
+    margin-bottom: .5rem;
+    font-size: 1rem;
+    background-color: rgb(235, 235, 243);
+    border:none;
+}
+input{
+    width:200%;
+}
+label{
+    font-size: 1.3rem;
+   
+   color:rgba(0,0,0,0.85)
+    
+}
+button{
+    padding:0.5rem 1rem;
+    background-color: #021d2b ;
+    color:white;
+    cursor: pointer;
+    font-size: 1.3rem;
+    margin: 1.5rem auto;
+    margin-right: 2rem;
+
+}
+button:hover{
+    transform: scale(1.15);
+    color:black;
+    background-color: white;
+    border:1px solid black
+}
+
+.success{
+    
+    text-align:center;
+    width:60%;
+    margin:auto;
+    border: 0.1px solid  rgba(38, 194, 129, 0.3);
+    background-color: rgba(38, 194, 129, 0.5);
+    padding:1rem;
+    font-size: 1.5rem;
+    margin-bottom:1.5rem;
+    color:rgba(0,0,0,0.7);
+    font-weight:bold;
+}
+.success a{
+    text-decoration: underline;
+    color:rgb(0, 81, 255);
+    
+}
+.validate{
+    margin-bottom: 0.2rem;
+    color:red;
+
+
+}
+
+.statusPop{
+    position: absolute;
+    top:70px;
+    background-color: rgba(0,0,0,0.2);
+    height:200vh;
+    width:99%;
+
+}
+
+.popContainer{
+
+    width:50%;
+    height:170px;
+    margin:auto;
+    margin-top:600px;
+    background-color: white;
+    padding:2rem;
+    text-align: center;
+
+}
+
+.popButton{
+    width:100%;
+    background-color:rgb(20, 110, 245);
+    border-radius: 10px;
+    border-radius: 10px;
+}
+
+.popButton:hover{
+    background-color: rgb(80, 140, 231);
+    transform: scale(1);
+    color:white;
+    border:none;
+    outline: none;
+}
+
+@media(max-width:1250px)
+{
+    .main{
+        width:80%;
+    }
+    .column{
+        flex-direction: column;
+    }
+    input{
+        width:90%;
+    }
+    .col-label{
+   
+        width: 40%;
+     
+     }
+}

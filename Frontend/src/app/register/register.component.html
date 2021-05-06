@@ -1,0 +1,107 @@
+<div class = "register">
+
+    <div *ngIf = "success" class = "success">Congratulations ! You have been successfully registered. Click here to <a href = "user-login">Login</a></div>
+    <div *ngIf = "fail"  class = "success">Sorry ! The Email Id has been already registered . Click here to <a href = "user-login">Login</a></div>
+    <form [formGroup] = "registerForm" (submit)="onRegister()">
+     <div class="main">
+      <h1 class = "head">Registration Form</h1>
+     
+            <p class = "validate" *ngIf = "registerForm.controls.firstName.errors && (registerForm.controls.firstName.touched ||registerForm.controls.firstName.dirty)">*First Name required</p>   
+            <div class="column">               
+                <div class="col-label"><label >Full Name</label></div>
+                <div><input type="text" placeholder="Enter First Name" formControlName = "firstName"></div>
+            </div>   
+
+
+            <div class = "validate" *ngIf = "registerForm.controls.age.errors && (registerForm.controls.age.touched ||registerForm.controls.age.dirty)">
+                <p *ngIf="registerForm.get('age').errors.required">*Student Age is Required</p>
+                <p *ngIf="registerForm.get('age').errors.ageRange && !registerForm.get('age').errors.required">*Please enter Student age between 23 and 50</p>
+            </div>   
+            <div class="column">
+                <div class="col-label"><Label>Age</Label></div>
+                <div><input type="number" placeholder="Enter Age" formControlName = "age"></div>
+            </div>
+    
+        
+            <div class="column" >
+                <div class="col-label"><label>Gender</label></div>
+                <div><select name="gender" id="gender" formControlName = "gender" >
+                <option value="">Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Others">Others</option>
+                </select></div>
+            </div> 
+     
+            <div class = "validate" *ngIf = "registerForm.controls.email.errors && (registerForm.controls.email.touched ||registerForm.controls.email.dirty)">
+                <p *ngIf = "registerForm.controls.email.errors?.required">*Email Id Required</p>
+                <p *ngIf = "registerForm.controls.email.errors?.pattern">*Please Enter a Valid Email ID</p>
+            </div>   
+            <div class="column">  
+                <div class="col-label"><label>E-Mail</label></div>
+                <div><input type="email" placeholder="Enter E-Mail Id" class="col-input" formControlName = "email"></div>
+            </div>
+
+
+            <div class = "validate" *ngIf = "registerForm.controls.password.errors && (registerForm.controls.password.touched ||registerForm.controls.password.dirty)">
+                <p *ngIf = "registerForm.controls.password.errors?.required">*Password required</p>
+                <p *ngIf = "registerForm.controls.password.errors?.invalidPassword">Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase
+                    letter and 1 number</p>
+            </div>   
+            <div class="column">
+                <div class="col-label"><label>Password</label></div>
+                <div><input type="password" placeholder="Enter Your Password" class="col-input" formControlName = "password"></div>
+            </div>
+
+
+            <div class = "validate" *ngIf = "registerForm.controls.rePassword.errors && (registerForm.controls.rePassword.touched ||registerForm.controls.rePassword.dirty)">
+                <p *ngIf = "registerForm.controls.rePassword.errors?.required">*Confirm Password Field is required</p>
+                <p *ngIf = "registerForm.controls.rePassword.errors?.passwordMismatch">Passwords doesnot match</p>
+            </div> 
+            <div class="column">
+                <div class="col-label"><label>Confirm Password</label></div>
+                <div><input type="password" placeholder="Confirm Password" class="col-input" formControlName = "rePassword"></div>
+            </div>
+
+            <div class = "validate" *ngIf = "registerForm.controls.mobile.errors && (registerForm.controls.mobile.touched ||registerForm.controls.mobile.dirty)">
+                <p *ngIf = "registerForm.controls.mobile.errors?.required">*Mobile number Required</p>
+                <p *ngIf = "registerForm.controls.mobile.errors?.pattern">*Please Enter a Valid mobile number of 10 digits</p>
+            </div>   
+            <div class="column">
+                <div class="col-label"><label>Mobile Number</label></div>
+                <div><input type="text" placeholder="Enter Mobile Number" class="col-input" formControlName = "mobile"></div>
+            </div>
+
+           <button [disabled] = "registerForm.invalid">Register</button>
+        
+        </div>
+    </form>
+
+ 
+
+  
+
+</div>
+
+
+
+<div class = "statusPop" *ngIf = "showPopup1">
+    <div class = "popContainer">
+        <div>
+            <p style = "text-align: center; font-size: 1.25rem; color:rgb(5, 21, 44)">Congratulations! You are successfully registered with Wheels4Hope.</p>
+            <button class = "popButton" (click) = "removePop1()">Click OK!</button>
+        </div>
+
+    </div> 
+
+</div>
+<div class = "statusPop" *ngIf = "showPopup2">
+    <div class = "popContainer">
+        <div>
+            <p style = "text-align: center; font-size: 1.25rem; color:rgb(5, 21, 44)">Sorry! This email Id is already registered. Kindly register with different email Id or login yourself.</p>
+            <button class = "popButton" (click) = "removePop2()">Click OK!</button>
+        </div>
+
+    </div> 
+
+</div>

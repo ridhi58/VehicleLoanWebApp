@@ -1,0 +1,48 @@
+// Admin Registration
+{
+	"email": "jeetonwheels@gmail.com",
+	"name": "ADMIN",
+	"password": "Wheels4Hope@LTI"
+}
+
+// User Registration Details
+{
+    "email": "jeetonwheelstwice@gmail.com",
+    "name": "Arijeet Banerjee",
+    "gender": "Male",
+    "mobile": "8584915408",
+    "age": 22,
+    "password": "arijeet"
+}
+
+//Loan Application Form
+
+{
+    "chassisNo": "1HGBH41JXMN109186",
+    "existingEMI": 1000.0,
+    "tenure": 2,
+    "interest": 4.5,
+    "amount": 4000,
+    "brand": "Toyota",
+    "colour": "White",
+    "model": "AE-86",
+    "type": 4,
+    "exShowPrice": "550000",
+    "onRoadPrice": "4000",
+	"user": 
+	{
+		"address": "Telco",
+		"state": "Jharkhand",
+		"city": "Jamshedpur",
+		"pin": "831017",
+		"emptype": "Permanent",
+		"salary": "50000",
+		"aadhar": "aadharURL",
+		"pan": "panURL",
+		"salarySlip": "salarySlipURL",
+		"addressProof": "addressProofURL"
+	}	
+}
+
+
+// Approved Loan
